@@ -1,0 +1,17 @@
+spring:
+  cors:
+    allowed-origins: 'http://localhost:63342'
+    allowed-methods: "*"
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true

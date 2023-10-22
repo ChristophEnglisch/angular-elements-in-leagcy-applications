@@ -1,0 +1,7 @@
+### GET request with a header
+GET {{server}}/person
+Accept: application/json
+
+### GET request with a header
+GET {{server}}/person/{{id}}
+Accept: application/json

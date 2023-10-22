@@ -1,0 +1,77 @@
+<mat-table [dataSource]="persons">
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> ID</mat-header-cell>
+        <mat-cell *matCellDef="let person"> {{person.id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="firstname">
+        <mat-header-cell *matHeaderCellDef> Vorname</mat-header-cell>
+        <mat-cell *matCellDef="let person"> {{person.firstname}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lastname">
+        <mat-header-cell *matHeaderCellDef> Nachname</mat-header-cell>
+        <mat-cell *matCellDef="let person"> {{person.lastname}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="age">
+        <mat-header-cell *matHeaderCellDef> Alter</mat-header-cell>
+        <mat-cell *matCellDef="let person"> {{person.age}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef> Löschen</mat-header-cell>
+        <mat-cell *matCellDef="let person">
+            <button mat-icon-button (click)="deletePerson(person.id)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+        <mat-header-cell *matHeaderCellDef> Bearbeiten</mat-header-cell>
+        <mat-cell *matCellDef="let person">
+            <button mat-icon-button (click)="openDialog(person)">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<button mat-raised-button (click)="openDialog()">Neue Person hinzufügen</button>
+
+<ng-template #deleteConfirmationDialog>
+    <h2 mat-dialog-title>Datensatz löschen</h2>
+    <mat-dialog-content>
+        Sind Sie sicher, dass Sie diesen Datensatz löschen möchten?
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button (click)="closeDialog()">Abbrechen</button>
+        <button mat-button (click)="confirmDelete()">Löschen</button>
+    </mat-dialog-actions>
+</ng-template>
+
+<ng-template #personDialog>
+    <h2 mat-dialog-title>{{ editingPersonId !== null ? 'Person bearbeiten' : 'Neue Person' }}</h2>
+    <mat-dialog-content>
+        <mat-form-field>
+            <mat-label>Vorname</mat-label>
+            <input matInput [(ngModel)]="newPerson.firstname">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Nachname</mat-label>
+            <input matInput [(ngModel)]="newPerson.lastname">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Alter</mat-label>
+            <input matInput [(ngModel)]="newPerson.age" type="number">
+        </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button (click)="closeDialog()">Abbrechen</button>
+        <button mat-button (click)="addOrEditPerson()">OK</button>
+    </mat-dialog-actions>
+</ng-template>

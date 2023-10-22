@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>AngularElement</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+<script type="text/javascript" src="localhost:8080/cdn/frontend/main.js"></script>
+
+<login-provider submit-color="cyan"></login-provider>
+
+<script>
+    const loginProvider = document.querySelector('login-provider');
+    loginProvider.addEventListener('formSubmitted', (event) => {
+        console.log('Data: ', event);
+        loginProvider.submitColor = 'gold';
+    });
+</script>
+</body>
+</html>

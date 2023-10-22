@@ -1,0 +1,9 @@
+### Send POST request with json body
+POST {{server}}/person
+Content-Type: application/json
+
+{
+  "firstname": "Christoph",
+  "lastname": "Englisch",
+  "age": 23
+}
