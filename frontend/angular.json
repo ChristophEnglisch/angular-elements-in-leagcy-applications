@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "angular-element": {
+        "person-management": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -17,7 +17,7 @@
                 "build": {
                     "builder": "ngx-build-plus:build",
                     "options": {
-                        "outputPath": "dist/angular-element",
+                        "outputPath": "dist/person-management",
                         "index": "src/index.html",
                         "main": "src/main.element.ts",
                         "tsConfig": "tsconfig.element.json",
@@ -61,10 +61,10 @@
                     "builder": "ngx-build-plus:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "angular-element:build:production"
+                            "browserTarget": "person-management:build:production"
                         },
                         "development": {
-                            "browserTarget": "angular-element:build:development"
+                            "browserTarget": "person-management:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
                 "extract-i18n": {
                     "builder": "ngx-build-plus:extract-i18n",
                     "options": {
-                        "browserTarget": "angular-element:build"
+                        "browserTarget": "person-management:build"
                     }
                 },
                 "test": {
@@ -95,7 +95,7 @@
                 }
             }
         },
-        "angular-element-serve": {
+        "person-management-serve": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -109,7 +109,7 @@
                 "build": {
                     "builder": "ngx-build-plus:browser",
                     "options": {
-                        "outputPath": "dist/angular-element-serve",
+                        "outputPath": "dist/person-management-serve",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -161,10 +161,10 @@
                     "builder": "ngx-build-plus:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "angular-element-serve:build:production"
+                            "browserTarget": "person-management-serve:build:production"
                         },
                         "development": {
-                            "browserTarget": "angular-element-serve:build:development"
+                            "browserTarget": "person-management-serve:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -172,7 +172,7 @@
                 "extract-i18n": {
                     "builder": "ngx-build-plus:extract-i18n",
                     "options": {
-                        "browserTarget": "angular-element-serve:build"
+                        "browserTarget": "person-management-serve:build"
                     }
                 },
                 "test": {

@@ -6,16 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
-<script type="text/javascript" src="localhost:8080/cdn/frontend/main.js"></script>
+<!-- Bundle file -->
+<script type="text/javascript" src="./main.js"></script>
 
-<login-provider submit-color="cyan"></login-provider>
-
-<script>
-    const loginProvider = document.querySelector('login-provider');
-    loginProvider.addEventListener('formSubmitted', (event) => {
-        console.log('Data: ', event);
-        loginProvider.submitColor = 'gold';
-    });
-</script>
+<!-- Custom element -->
+<person-provider></person-provider>
 </body>
 </html>
