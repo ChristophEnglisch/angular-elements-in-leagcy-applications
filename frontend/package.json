@@ -1,10 +1,10 @@
 {
-  "name": "angular-element",
+  "name": "person-management",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve angular-element-serve",
-    "build": "ng build angular-element",
+    "start": "ng serve person-management-serve",
+    "build": "ng build person-management",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
